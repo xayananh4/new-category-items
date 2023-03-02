@@ -15,12 +15,14 @@ namespace ToDoList.Controllers
       return View(allCategories);
     }
 
+    //After clicking link to add category
     [HttpGet("/categories/new")]
     public ActionResult New()
     {
       return View();
     }
 
+   //comes here after submitting in New form 
     [HttpPost("/categories")]
     public ActionResult Create(string categoryName)
     {
@@ -28,6 +30,8 @@ namespace ToDoList.Controllers
       return RedirectToAction("Index");
     }
 
+
+    //comes here after clicking link in the index.cshtml page/list of categories page 
     [HttpGet("/categories/{id}")]
     public ActionResult Show(int id)
     {
